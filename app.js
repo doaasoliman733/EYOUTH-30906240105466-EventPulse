@@ -11,6 +11,8 @@ const authRoutes = require('./routes/authRoutes');
 const requireAuth = require('./middleware/requireAuth');
 const requireRole = require('./middleware/requireRole');
 const eventRoutes = require('./routes/events.routes');
+const registrationRoutes = require('./routes/registrations.routes');
+
 
 const app = express();
 
@@ -21,7 +23,7 @@ app.use(mongoSanitize());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
-
+app.use('/api/registrations', registrationRoutes);
 // Test protected route
 app.get('/api/auth/test', requireAuth, (req, res) => {
   res.status(200).json({
