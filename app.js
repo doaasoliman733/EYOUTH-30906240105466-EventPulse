@@ -10,6 +10,7 @@ const errorHandler = require('./middleware/errorHandler');
 const authRoutes = require('./routes/authRoutes');
 const requireAuth = require('./middleware/requireAuth');
 const requireRole = require('./middleware/requireRole');
+const eventRoutes = require('./routes/events.routes');
 
 const app = express();
 
@@ -17,7 +18,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(mongoSanitize());
 
+
 app.use('/api/auth', authRoutes);
+app.use('/api/events', eventRoutes);
 
 // Test protected route
 app.get('/api/auth/test', requireAuth, (req, res) => {
@@ -61,3 +64,4 @@ async function start() {
 }
 
 start();
+
