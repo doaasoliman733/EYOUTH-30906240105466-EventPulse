@@ -1,10 +1,18 @@
 const router = require('express').Router();
 
 const requireAuth = require('../middleware/requireAuth');
+const validate = require('../middleware/validate');
+const { registerForEventValidation } = require('../middleware/validators');
 
 const ctrl = require('../controllers/registrations.controller');
 
-router.post('/', requireAuth, ctrl.registerForEvent);
+router.post(
+  '/',
+  requireAuth,
+  registerForEventValidation,
+  validate,
+  ctrl.registerForEvent
+);
 
 router.get('/my', requireAuth, ctrl.getMyRegistrations);
 
