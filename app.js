@@ -1,6 +1,8 @@
 require('dotenv').config();
 
 const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
 const morgan = require('morgan');
 const mongoSanitize = require('express-mongo-sanitize');
 
@@ -12,18 +14,36 @@ const requireAuth = require('./middleware/requireAuth');
 const requireRole = require('./middleware/requireRole');
 const eventRoutes = require('./routes/events.routes');
 const registrationRoutes = require('./routes/registrations.routes');
-
+const announcementRoutes = require('./routes/announcements.routes');
 
 const app = express();
+const httpServer = http.createServer(app);
+const io = new Server(httpServer);
+
+app.set('io', io);
+
+io.on('connection', (socket) => {
+  console.log(`Socket connected: ${socket.id}`);
+
+  socket.on('join-event', (eventId) => {
+    socket.join(eventId);
+    console.log(`Socket ${socket.id} joined event room ${eventId}`);
+  });
+
+  socket.on('disconnect', () => {
+    console.log(`Socket disconnected: ${socket.id}`);
+  });
+});
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(mongoSanitize());
 
-
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/registrations', registrationRoutes);
+app.use('/api/announcements', announcementRoutes);
+
 // Test protected route
 app.get('/api/auth/test', requireAuth, (req, res) => {
   res.status(200).json({
@@ -60,10 +80,9 @@ app.use(errorHandler);
 async function start() {
   await connectDB();
 
-  app.listen(process.env.PORT, () => {
+  httpServer.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
   });
 }
 
 start();
-
