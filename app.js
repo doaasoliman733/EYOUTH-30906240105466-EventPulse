@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const mongoose = require('mongoose');
 const http = require('http');
 const { Server } = require('socket.io');
 const morgan = require('morgan');
@@ -65,6 +66,18 @@ app.get(
     });
   }
 );
+
+app.get('/health', (req, res) => {
+  const dbState = mongoose.connection.readyState;
+  const dbStatus = dbState === 1 ? 'connected' : 'disconnected';
+
+  res.status(200).json({
+    status: 'ok',
+    environment: process.env.NODE_ENV,
+    uptime: process.uptime(),
+    database: dbStatus,
+  });
+});
 
 // 404 handler
 app.use((req, res, next) => {

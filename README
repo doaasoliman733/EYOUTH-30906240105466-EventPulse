@@ -1,0 +1,31 @@
+# EventPulse API
+
+EventPulse is a backend API for discovering events, registering as an attendee, and receiving real-time announcements from event organizers. It handles authentication, event management, capacity-safe registrations, and live WebSocket-based announcements — built as a complete production-style Node.js backend from authentication through deployment.
+
+## Tech Stack
+
+- Node.js & Express
+- MongoDB & Mongoose
+- Socket.io (real-time announcements)
+- JSON Web Tokens (authentication)
+- express-validator (input validation)
+- Jest & Supertest (unit and integration testing)
+- Swagger / OpenAPI (API documentation)
+- Vercel (deployment)
+
+## Steps to Run the Project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/doaasoliman733/EYOUTH-30906240105466-EventPulse.git
+cd EYOUTH-30906240105466-EventPulse
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file in the project root (see `.env.example` for the required variable names):
