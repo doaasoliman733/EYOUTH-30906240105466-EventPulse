@@ -212,5 +212,5 @@ https://eyouth-30906240105466-event-pulse-fjkkknhre.vercel.app/health
 ### Live Swagger Documentation
 
 ```text
-https://eyouth-30906240105466-event-pulse-fjkkknhre.vercel.app/api-docs
+https://eyouth-30906240105466-event-pulse.vercel.app/api-docs/
 ```
