@@ -17,6 +17,9 @@ const eventRoutes = require('./routes/events.routes');
 const registrationRoutes = require('./routes/registrations.routes');
 const announcementRoutes = require('./routes/announcements.routes');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger');
+
 const app = express();
 const httpServer = http.createServer(app);
 const io = new Server(httpServer);
@@ -39,6 +42,7 @@ io.on('connection', (socket) => {
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(mongoSanitize());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);

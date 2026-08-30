@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "jest"
+    "test": "jest",
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,9 @@
     "mongodb": "^7.6.0",
     "mongoose": "^9.9.3",
     "morgan": "^1.11.0",
-    "socket.io": "^4.8.3"
+    "socket.io": "^4.8.3",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "jest": "^30.4.2",

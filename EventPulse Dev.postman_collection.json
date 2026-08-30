@@ -1,0 +1,1013 @@
+{
+  "info": {
+    "_postman_id": "b8f4edad-541f-4cc9-9c6d-b186d2ee1cdb",
+    "name": "EventPulse Dev",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55897686",
+    "_collection_link": "https://go.postman.co/collection/55897686-b8f4edad-541f-4cc9-9c6d-b186d2ee1cdb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"TestPassword123\",\r\n  \"role\": \"attendee\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "340"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"154-nIBgF3j2tVG2ecq1tb8uS0DTEdA\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 18:44:34 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk0N2ExMWI2OGI4ZWUwMjA5ODU3ZjMiLCJyb2xlIjoiYXR0ZW5kZWUiLCJpYXQiOjE3ODgxMTU0NzQsImV4cCI6MTc4ODcyMDI3NH0.CZj05yD2mJ0JZ5qj0HNdKJZxMerttzj7Bpc4nTjn5GQ\",\n  \"data\": {\n    \"id\": \"6a947a11b68b8ee0209857f3\",\n    \"name\": \"Test User\",\n    \"email\": \"testuser@example.com\",\n    \"role\": \"attendee\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"TestPassword123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"admin@eventpulse.com\",\r\n  \"password\": \"password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "227"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"e3-PEX8HzeF2bbwymKtLrO63hZJ4qs\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 18:57:48 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk0NmY4NjcyZWY5MjZhNWRjYTYxZWQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODgxMTYyNjgsImV4cCI6MTc4ODcyMTA2OH0.0J08Op38KYXqtvwL6-_wKSlgR8PQNl6gyjkjjLIaW_g\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Event Details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "2987"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"bab-LSkoV4g0GJAQKFjZsNWf+mAyNjU\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 18:46:21 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"total\": 4,\n  \"page\": 1,\n  \"limit\": 10,\n  \"totalPages\": 1,\n  \"data\": [\n    {\n      \"_id\": \"6a946f8772ef926a5dca61f2\",\n      \"title\": \"Future of Web Development\",\n      \"description\": \"Exploring the latest trends in React, Vue, and backend architecture.\",\n      \"category\": {\n        \"_id\": \"6a946f8672ef926a5dca61ef\",\n        \"name\": \"Technology\",\n        \"description\": \"Tech talks, coding bootcamps, and AI.\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-30T17:59:34.838Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.838Z\"\n      },\n      \"date\": \"2026-10-15T00:00:00.000Z\",\n      \"city\": \"Cairo\",\n      \"venue\": \"Tech Hub\",\n      \"capacity\": 100,\n      \"organizer\": {\n        \"_id\": \"6a946f8672ef926a5dca61ed\",\n        \"name\": \"Admin Manager\",\n        \"email\": \"admin@eventpulse.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-08-30T17:59:34.412Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.412Z\",\n        \"__v\": 0\n      },\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n      \"updatedAt\": \"2026-08-30T17:59:35.074Z\"\n    },\n    {\n      \"_id\": \"6a946f8772ef926a5dca61f3\",\n      \"title\": \"Mastering Figma Components\",\n      \"description\": \"A deep dive into advanced UI design and design systems.\",\n      \"category\": {\n        \"_id\": \"6a946f8672ef926a5dca61f0\",\n        \"name\": \"Design\",\n        \"description\": \"UI/UX, graphic design, and illustration.\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-30T17:59:34.838Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.838Z\"\n      },\n      \"date\": \"2026-11-05T00:00:00.000Z\",\n      \"city\": \"Alexandria\",\n      \"venue\": \"Design Studio 5\",\n      \"capacity\": 50,\n      \"organizer\": {\n        \"_id\": \"6a946f8672ef926a5dca61ed\",\n        \"name\": \"Admin Manager\",\n        \"email\": \"admin@eventpulse.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-08-30T17:59:34.412Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.412Z\",\n        \"__v\": 0\n      },\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n      \"updatedAt\": \"2026-08-30T17:59:35.074Z\"\n    },\n    {\n      \"_id\": \"6a946f8772ef926a5dca61f4\",\n      \"title\": \"Startup Pitch Night\",\n      \"description\": \"Watch 10 startups pitch their ideas to local investors.\",\n      \"category\": {\n        \"_id\": \"6a946f8672ef926a5dca61f1\",\n        \"name\": \"Business\",\n        \"description\": \"Startups, marketing, and leadership.\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-30T17:59:34.838Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.838Z\"\n      },\n      \"date\": \"2026-12-01T00:00:00.000Z\",\n      \"city\": \"Cairo\",\n      \"venue\": \"AUC Campus\",\n      \"capacity\": 200,\n      \"organizer\": {\n        \"_id\": \"6a946f8672ef926a5dca61ed\",\n        \"name\": \"Admin Manager\",\n        \"email\": \"admin@eventpulse.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-08-30T17:59:34.412Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.412Z\",\n        \"__v\": 0\n      },\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n      \"updatedAt\": \"2026-08-30T17:59:35.074Z\"\n    },\n    {\n      \"_id\": \"6a946f8772ef926a5dca61f5\",\n      \"title\": \"Fullstack Bootcamp Kickoff\",\n      \"description\": \"Welcome day for the new cohort of aspiring software engineers.\",\n      \"category\": {\n        \"_id\": \"6a946f8672ef926a5dca61ef\",\n        \"name\": \"Technology\",\n        \"description\": \"Tech talks, coding bootcamps, and AI.\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-30T17:59:34.838Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.838Z\"\n      },\n      \"date\": \"2027-01-10T00:00:00.000Z\",\n      \"city\": \"Cairo\",\n      \"venue\": \"Digital Egypt Hub\",\n      \"capacity\": 75,\n      \"organizer\": {\n        \"_id\": \"6a946f8672ef926a5dca61ed\",\n        \"name\": \"Admin Manager\",\n        \"email\": \"admin@eventpulse.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-08-30T17:59:34.412Z\",\n        \"updatedAt\": \"2026-08-30T17:59:34.412Z\",\n        \"__v\": 0\n      },\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n      \"updatedAt\": \"2026-08-30T17:59:35.074Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Tech Meetup\",\r\n  \"description\": \"A meetup for technology enthusiasts.\",\r\n  \"date\": \"2026-12-15T18:00:00.000Z\",\r\n  \"location\": \"Cairo\",\r\n  \"capacity\": 100\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 - Event Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Tech Meetup\",\r\n  \"description\": \"A meetup for technology enthusiasts.\",\r\n  \"category\": \"6a946f8672ef926a5dca61ef\",\r\n  \"date\": \"2026-12-15T18:00:00.000Z\",\r\n  \"city\": \"Cairo\",\r\n  \"venue\": \"Tech Hub\",\r\n  \"capacity\": 100\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "383"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"17f-gKtlJq81kMpX3Tx62LOI4YqYwUI\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:00:40 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"title\": \"Tech Meetup\",\n    \"description\": \"A meetup for technology enthusiasts.\",\n    \"category\": \"6a946f8672ef926a5dca61ef\",\n    \"date\": \"2026-12-15T18:00:00.000Z\",\n    \"city\": \"Cairo\",\n    \"venue\": \"Tech Hub\",\n    \"capacity\": 100,\n    \"organizer\": \"6a946f8672ef926a5dca61ed\",\n    \"_id\": \"6a947dd8b68b8ee0209857f4\",\n    \"createdAt\": \"2026-08-30T19:00:40.648Z\",\n    \"updatedAt\": \"2026-08-30T19:00:40.648Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Event Details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a946f8772ef926a5dca61f2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a946f8772ef926a5dca61f2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "760"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2f8-gNHv61F9jfwM0YK/Vk7WN1NLufk\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 18:48:23 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"_id\": \"6a946f8772ef926a5dca61f2\",\n    \"title\": \"Future of Web Development\",\n    \"description\": \"Exploring the latest trends in React, Vue, and backend architecture.\",\n    \"category\": {\n      \"_id\": \"6a946f8672ef926a5dca61ef\",\n      \"name\": \"Technology\",\n      \"description\": \"Tech talks, coding bootcamps, and AI.\",\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-30T17:59:34.838Z\",\n      \"updatedAt\": \"2026-08-30T17:59:34.838Z\"\n    },\n    \"date\": \"2026-10-15T00:00:00.000Z\",\n    \"city\": \"Cairo\",\n    \"venue\": \"Tech Hub\",\n    \"capacity\": 100,\n    \"organizer\": {\n      \"_id\": \"6a946f8672ef926a5dca61ed\",\n      \"name\": \"Admin Manager\",\n      \"email\": \"admin@eventpulse.com\",\n      \"role\": \"admin\",\n      \"createdAt\": \"2026-08-30T17:59:34.412Z\",\n      \"updatedAt\": \"2026-08-30T17:59:34.412Z\",\n      \"__v\": 0\n    },\n    \"__v\": 0,\n    \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n    \"updatedAt\": \"2026-08-30T17:59:35.074Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Updated Tech Meetup\",\r\n  \"description\": \"Updated event description.\",\r\n  \"capacity\": 120\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a946f8772ef926a5dca61f2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a946f8772ef926a5dca61f2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Event Updated",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Updated Tech Meetup\",\r\n  \"description\": \"Updated event description.\",\r\n  \"capacity\": 120\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a946f8772ef926a5dca61f2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a946f8772ef926a5dca61f2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "381"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"17d-C97m4cT6OgjnfoH+p/jLLSb1RD8\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:08:02 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"_id\": \"6a946f8772ef926a5dca61f2\",\n    \"title\": \"Updated Tech Meetup\",\n    \"description\": \"Updated event description.\",\n    \"category\": \"6a946f8672ef926a5dca61ef\",\n    \"date\": \"2026-10-15T00:00:00.000Z\",\n    \"city\": \"Cairo\",\n    \"venue\": \"Tech Hub\",\n    \"capacity\": 120,\n    \"organizer\": \"6a946f8672ef926a5dca61ed\",\n    \"__v\": 0,\n    \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n    \"updatedAt\": \"2026-08-30T19:08:02.734Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0i17}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a946f8772ef926a5dca61f5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a946f8772ef926a5dca61f5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Event Deleted",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a946f8772ef926a5dca61f5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a946f8772ef926a5dca61f5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "59"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"3b-w6LOf8BJOHoBpb8mx6PvHTlQtfw\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:11:28 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Event deleted successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0i17}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"event\": \"6a946f8772ef926a5dca61f3\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 - Registration Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"event\": \"6a946f8772ef926a5dca61f3\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "221"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"dd-Qtpz2UjTgGsWily8xH4Z1/s7JPQ\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:15:52 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"event\": \"6a946f8772ef926a5dca61f3\",\n    \"attendee\": \"6a946f8672ef926a5dca61ed\",\n    \"_id\": \"6a948168b68b8ee0209857f5\",\n    \"createdAt\": \"2026-08-30T19:15:52.311Z\",\n    \"updatedAt\": \"2026-08-30T19:15:52.311Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "200 - My Registrations",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/my",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "my"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "607"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"25f-I1G3Io0UQhM+CnqgpHM0LF1COoY\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:17:25 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"total\": 1,\n  \"data\": [\n    {\n      \"_id\": \"6a948168b68b8ee0209857f5\",\n      \"event\": {\n        \"_id\": \"6a946f8772ef926a5dca61f3\",\n        \"title\": \"Mastering Figma Components\",\n        \"description\": \"A deep dive into advanced UI design and design systems.\",\n        \"category\": \"6a946f8672ef926a5dca61f0\",\n        \"date\": \"2026-11-05T00:00:00.000Z\",\n        \"city\": \"Alexandria\",\n        \"venue\": \"Design Studio 5\",\n        \"capacity\": 50,\n        \"organizer\": \"6a946f8672ef926a5dca61ed\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-30T17:59:35.074Z\",\n        \"updatedAt\": \"2026-08-30T17:59:35.074Z\"\n      },\n      \"attendee\": \"6a946f8672ef926a5dca61ed\",\n      \"createdAt\": \"2026-08-30T19:15:52.311Z\",\n      \"updatedAt\": \"2026-08-30T19:15:52.311Z\",\n      \"__v\": 0\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0i17}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/6a948168b68b8ee0209857f5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "6a948168b68b8ee0209857f5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Registration Deleted",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a948168b68b8ee0209857f5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a948168b68b8ee0209857f5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "68"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"44-S/6EC9O+MYi2pmoieNIpvsKn7OQ\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:18:52 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Registration cancelled successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Announcements",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0i17}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventId\": \"6a946f8772ef926a5dca61f2\",\r\n  \"message\": \"The event will begin at 6 PM.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 - Announcement Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eventId\": \"6a946f8772ef926a5dca61f3\",\r\n  \"text\": \"The event will begin at 6 PM.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "320"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"140-cqVx0MZ0xYkBdgEdV7cjlhPgm3c\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:56:44 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"event\": \"6a946f8772ef926a5dca61f3\",\n    \"sender\": {\n      \"_id\": \"6a946f8672ef926a5dca61ed\",\n      \"name\": \"Admin Manager\",\n      \"email\": \"admin@eventpulse.com\"\n    },\n    \"text\": \"The event will begin at 6 PM.\",\n    \"_id\": \"6a948af6b68b8ee0209857f6\",\n    \"createdAt\": \"2026-08-30T19:56:38.710Z\",\n    \"updatedAt\": \"2026-08-30T19:56:38.710Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Event Announcements",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements/6a946f8772ef926a5dca61f3",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements",
+                    "6a946f8772ef926a5dca61f3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "332"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"14c-OvxkuVzNQHZOpb9J0Qcs+Ru4iBU\""
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 30 Aug 2026 19:58:00 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"total\": 1,\n  \"data\": [\n    {\n      \"_id\": \"6a948af6b68b8ee0209857f6\",\n      \"event\": \"6a946f8772ef926a5dca61f3\",\n      \"sender\": {\n        \"_id\": \"6a946f8672ef926a5dca61ed\",\n        \"name\": \"Admin Manager\",\n        \"email\": \"admin@eventpulse.com\"\n      },\n      \"text\": \"The event will begin at 6 PM.\",\n      \"createdAt\": \"2026-08-30T19:56:38.710Z\",\n      \"updatedAt\": \"2026-08-30T19:56:38.710Z\",\n      \"__v\": 0\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0i17",
+      "secret": true
+    }
+  ]
+}
