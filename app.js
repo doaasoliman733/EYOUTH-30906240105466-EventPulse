@@ -42,6 +42,16 @@ io.on('connection', (socket) => {
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(mongoSanitize());
+
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', authRoutes);
