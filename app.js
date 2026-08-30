@@ -110,6 +110,15 @@ app.get(
   }
 );
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'EventPulse API is running',
+    health: '/health',
+    docs: '/api-docs'
+  });
+});
+
 app.get('/health', (req, res) => {
   const dbState = mongoose.connection.readyState;
   const dbStatus = dbState === 1 ? 'connected' : 'disconnected';
